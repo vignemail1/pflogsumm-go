@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-const version = "1.1.5"
+var version = "1.1.5"
 
 // Options holds all command-line options.
 type Options struct {

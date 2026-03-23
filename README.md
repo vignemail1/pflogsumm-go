@@ -114,6 +114,23 @@ Supports both traditional syslog and RFC 3339 timestamp formats:
 - Traditional: `Mon DD HH:MM:SS hostname process[pid]: message`
 - RFC 3339: `YYYY-MM-DDTHH:MM:SS[.nnn][+-]HH:MM hostname process[pid]: message`
 
+## CI/CD
+
+CI runs automatically on every push and pull request to `main`, running vet, tests, and build verification.
+
+### Creating a Release
+
+To create a release with pre-built binaries for all platforms:
+
+```bash
+git tag v1.x.x
+git push origin v1.x.x
+```
+
+This triggers the release workflow which builds static binaries for Linux (amd64, arm64, arm), macOS (amd64, arm64), FreeBSD (amd64), and Windows (amd64), then publishes them as a GitHub Release with SHA256 checksums.
+
+Pre-built binaries are available on the [GitHub Releases](https://github.com/vignemail1/pflogsumm-go/releases) page.
+
 ## Credits
 
 Original Perl pflogsumm by James S. Seymour. Go reimplementation by the pflogsumm-go contributors.
