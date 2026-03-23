@@ -1,0 +1,7 @@
+pflogsumm
+pflogsumm-go
+*.exe
+*.test
+*.out
+.claude/
+.mcp.json

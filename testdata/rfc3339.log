@@ -1,0 +1,4 @@
+2024-03-22T08:00:01.000+00:00 mailhost postfix/smtpd[12345]: ABCDE12345: client=sender.example.com[192.168.1.1]
+2024-03-22T08:00:02.000+00:00 mailhost postfix/qmgr[12347]: ABCDE12345: from=<user1@sender.example.com>, size=1234, nrcpt=1 (queue active)
+2024-03-22T08:00:03.000+00:00 mailhost postfix/smtp[12348]: ABCDE12345: to=<recipient1@recipient.example.com>, relay=mx.recipient.example.com[10.0.0.1]:25, delay=1.5, delays=0.1/0.2/0.3/0.9, dsn=2.0.0, status=sent (250 OK)
+2024-03-22T08:00:04.000+00:00 mailhost postfix/qmgr[12347]: ABCDE12345: removed

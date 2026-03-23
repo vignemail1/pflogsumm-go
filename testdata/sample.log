@@ -1,0 +1,31 @@
+Mar 22 08:00:01 mailhost postfix/smtpd[12345]: connect from sender.example.com[192.168.1.1]
+Mar 22 08:00:02 mailhost postfix/smtpd[12345]: ABCDE12345: client=sender.example.com[192.168.1.1]
+Mar 22 08:00:03 mailhost postfix/cleanup[12346]: ABCDE12345: message-id=<msg001@example.com>
+Mar 22 08:00:04 mailhost postfix/qmgr[12347]: ABCDE12345: from=<user1@sender.example.com>, size=1234, nrcpt=1 (queue active)
+Mar 22 08:00:05 mailhost postfix/smtp[12348]: ABCDE12345: to=<recipient1@recipient.example.com>, relay=mx.recipient.example.com[10.0.0.1]:25, delay=1.5, delays=0.1/0.2/0.3/0.9, dsn=2.0.0, status=sent (250 OK)
+Mar 22 08:00:06 mailhost postfix/qmgr[12347]: ABCDE12345: removed
+Mar 22 08:00:07 mailhost postfix/smtpd[12345]: disconnect from sender.example.com[192.168.1.1]
+Mar 22 08:01:01 mailhost postfix/smtpd[12350]: connect from other.example.com[192.168.1.2]
+Mar 22 08:01:02 mailhost postfix/smtpd[12350]: FGHIJ67890: client=other.example.com[192.168.1.2]
+Mar 22 08:01:03 mailhost postfix/cleanup[12351]: FGHIJ67890: message-id=<msg002@example.com>
+Mar 22 08:01:04 mailhost postfix/qmgr[12347]: FGHIJ67890: from=<user2@other.example.com>, size=5678, nrcpt=2 (queue active)
+Mar 22 08:01:05 mailhost postfix/smtp[12352]: FGHIJ67890: to=<recipient2@recipient.example.com>, relay=mx.recipient.example.com[10.0.0.1]:25, delay=2.0, delays=0.1/0.2/0.3/1.4, dsn=2.0.0, status=sent (250 OK)
+Mar 22 08:01:06 mailhost postfix/smtp[12352]: FGHIJ67890: to=<recipient3@another.example.com>, relay=mx.another.example.com[10.0.0.2]:25, delay=3.0, delays=0.1/0.2/0.3/2.4, dsn=2.0.0, status=sent (250 OK)
+Mar 22 08:01:07 mailhost postfix/qmgr[12347]: FGHIJ67890: removed
+Mar 22 08:01:08 mailhost postfix/smtpd[12350]: disconnect from other.example.com[192.168.1.2]
+Mar 22 08:02:01 mailhost postfix/pickup[12360]: KLMNO11111: uid=1000 from=<localuser>
+Mar 22 08:02:02 mailhost postfix/cleanup[12361]: KLMNO11111: message-id=<msg003@localhost>
+Mar 22 08:02:03 mailhost postfix/qmgr[12347]: KLMNO11111: from=<localuser@localhost>, size=500, nrcpt=1 (queue active)
+Mar 22 08:02:04 mailhost postfix/smtp[12362]: KLMNO11111: to=<recipient4@recipient.example.com>, relay=mx.recipient.example.com[10.0.0.1]:25, delay=0.5, delays=0.1/0.1/0.1/0.2, dsn=2.0.0, status=sent (250 OK)
+Mar 22 08:02:05 mailhost postfix/qmgr[12347]: KLMNO11111: removed
+Mar 22 08:03:01 mailhost postfix/smtp[12370]: PQRST22222: to=<bounced@example.com>, relay=mx.example.com[10.0.0.3]:25, delay=5.0, delays=0.1/0.2/0.3/4.4, dsn=5.1.1, status=bounced (550 User unknown)
+Mar 22 08:04:01 mailhost postfix/smtp[12375]: UVWXY33333: to=<deferred@example.com>, relay=none, delay=30, delays=0.1/0/29.9/0, dsn=4.4.1, status=deferred (connect to mx.example.com[10.0.0.4]:25: Connection timed out)
+Mar 22 08:05:01 mailhost postfix/smtpd[12380]: NOQUEUE: reject: RCPT from spammer.example.com[172.16.0.1]: 554 5.7.1 <spam@example.com>: Relay access denied; from=<spammer@spam.com> to=<victim@example.com> proto=ESMTP helo=<spammer.example.com>
+Mar 22 08:06:01 mailhost postfix/smtpd[12385]: warning: hostname verification failed
+Mar 22 08:07:01 mailhost postfix/master[12390]: daemon started -- version 3.5.0
+Mar 22 09:00:01 mailhost postfix/smtpd[12400]: connect from morning.example.com[192.168.2.1]
+Mar 22 09:00:02 mailhost postfix/smtpd[12400]: ZZZZZ44444: client=morning.example.com[192.168.2.1]
+Mar 22 09:00:03 mailhost postfix/qmgr[12347]: ZZZZZ44444: from=<morning@morning.example.com>, size=2000, nrcpt=1 (queue active)
+Mar 22 09:00:04 mailhost postfix/smtp[12401]: ZZZZZ44444: to=<morningrecip@morning.example.com>, relay=mx.morning.example.com[192.168.2.2]:25, delay=1.0, delays=0.1/0.1/0.1/0.7, dsn=2.0.0, status=sent (250 OK)
+Mar 22 09:00:05 mailhost postfix/qmgr[12347]: ZZZZZ44444: removed
+Mar 22 09:00:06 mailhost postfix/smtpd[12400]: disconnect from morning.example.com[192.168.2.1]
